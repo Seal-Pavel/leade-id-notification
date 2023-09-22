@@ -1,0 +1,34 @@
+name: Deploy to develop
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set SSH Port
+        id: set_port
+        run: echo "SSH_PORT=${{ secrets.SSH_PORT }}" >> $GITHUB_ENV
+        env:
+          SSH_PORT: ${{ secrets.SSH_PORT || 22 }}
+
+      - uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          port: ${{ env.SSH_PORT }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd projects/usedesk_notification_bot
+            git checkout dev
+            git pull origin dev
+            docker-compose down
+            docker-compose build --build-arg assembling_mod=DEV
+            docker-compose up -d
+            rm -rf /tmp/_MEI*

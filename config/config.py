@@ -1,0 +1,73 @@
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+# Assembling
+ASSEMBLING_MOD = os.getenv("ASSEMBLING_MOD")
+if ASSEMBLING_MOD == "DEV":
+    team_chat_id = os.getenv("MY_CHAT_ID")
+    bot_token = os.getenv("TEST_BOT_TOKEN")
+else:
+    team_chat_id = os.getenv("TEAM_CHAT_ID")
+    bot_token = os.getenv("BOT_TOKEN")
+
+# Telegram
+BOT_TOKEN = bot_token
+BOT_PORT = os.getenv("BOT_PORT")
+MY_CHAT_ID = os.getenv("MY_CHAT_ID")
+TEAM_CHAT_ID = team_chat_id
+# WEBHOOK
+WEBHOOK_PATH = os.getenv("WEBHOOK_PATH")
+WEBHOOK_SECRET = os.getenv("WEBHOOK_SECRET")
+WEBHOOK_URL = os.getenv("WEBHOOK_URL")
+WEBHOOK_SSL_CERT = os.getenv("WEBHOOK_SSL_CERT")
+WEBHOOK_SSL_PRIV = os.getenv("WEBHOOK_SSL_PRIV")
+# Telegram URLs API
+URL_SEND_MSG = os.getenv("URL_SEND_MSG")
+
+# Seal
+MY_IP = os.getenv("MY_IP")
+
+# SERVER
+SERVER_IP = os.getenv("SERVER_IP")
+SERVER_DOMAIN = os.getenv("SERVER_DOMAIN")
+SERVER_MAIN_DIR = os.getenv("SERVER_MAIN_DIR")
+
+# REDIS
+REDIS_PASSWORD = os.getenv('REDIS_PASSWORD')
+
+# Browser
+BROWSER_LOGIN = os.getenv("BROWSER_LOGIN")
+NOVNC_PASSWORD = os.getenv("NOVNC_PASSWORD")
+BROWSER_HOST = os.getenv("BROWSER_HOST")
+BROWSER_PORT = os.getenv("BROWSER_PORT")
+
+# Server
+SERVER_HOST = os.getenv("SERVER_HOST")
+SERVER_PORT = os.getenv("SERVER_PORT")
+
+# Database
+POSTGRES_HOST = os.getenv("POSTGRES_HOST")
+POSTGRES_PORT = os.getenv("POSTGRES_PORT")
+
+# Leader-ID
+SECOND_ADMIN_LOGIN = os.getenv("SECOND_ADMIN_LOGIN")
+SECOND_ADMIN_PASSWORD = os.getenv("SECOND_ADMIN_PASSWORD")
+ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
+
+# Usedesk
+USEDESK_IP = os.getenv("USEDESK_IP")
+TEST_TICKER = os.getenv("TEST_TICKER")
+USEDESK_PAVEL_NAME = os.getenv("USEDESK_PAVEL_NAME")
+USEDESK_PAVEL_EMAIL = os.getenv("USEDESK_PAVEL_EMAIL")
+USEDESK_PAVEL_PASSWORD = os.getenv("USEDESK_PAVEL_PASSWORD")
+USEDESK_DENIS_NAME = os.getenv("USEDESK_DENIS_NAME")
+USEDESK_DENIS_EMAIL = os.getenv("USEDESK_DENIS_EMAIL")
+USEDESK_DENIS_PASSWORD = os.getenv("USEDESK_DENIS_PASSWORD")
+USEDESK_VOVA_NAME = os.getenv("USEDESK_VOVA_NAME")
+USEDESK_VOVA_EMAIL = os.getenv("USEDESK_VOVA_EMAIL")
+USEDESK_VOVA_PASSWORD = os.getenv("USEDESK_VOVA_PASSWORD")
+USEDESK_NIKA_NAME = os.getenv("USEDESK_NIKA_NAME")
+USEDESK_NIKA_EMAIL = os.getenv("USEDESK_NIKA_EMAIL")
+USEDESK_NIKA_PASSWORD = os.getenv("USEDESK_NIKA_PASSWORD")
