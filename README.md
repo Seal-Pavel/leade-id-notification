@@ -3,5 +3,5 @@
 
 #### Запуск
 ```sh
-$ echo 'Not ready yet'
+$ echo 'Not ready yet...'
 ```
